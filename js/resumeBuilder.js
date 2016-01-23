@@ -52,8 +52,7 @@ var education = {
 		// display schools
 		for (school in this.schools) {
 			$("#education").append(HTMLschoolStart);
-			$(".education-entry:last").append(HTMLschoolName.replace("%data%", this.schools[school].name));
-			$(".education-entry:last").append(HTMLschoolDegree.replace("%data%", this.schools[school].degree));
+			$(".education-entry:last").append(HTMLschoolName.replace("%data%", this.schools[school].name)+HTMLschoolDegree.replace("%data%", this.schools[school].degree));
 			$(".education-entry:last").append(HTMLschoolDates.replace("%data%", this.schools[school].dates));
 			$(".education-entry:last").append(HTMLschoolLocation.replace("%data%", this.schools[school].location));
 			var majors = this.schools[school].majors.join(" / ");
@@ -64,8 +63,7 @@ var education = {
 		$("#education").append(HTMLonlineClasses);
 		for (course in this.onlineCourses) {
 			$("#education").append(HTMLschoolStart);
-			$(".education-entry:last").append(HTMLonlineTitle.replace("%data%", this.onlineCourses[course].title));
-			$(".education-entry:last").append(HTMLonlineSchool.replace("%data%", this.onlineCourses[course].school));
+			$(".education-entry:last").append(HTMLonlineTitle.replace("%data%", this.onlineCourses[course].title)+HTMLonlineSchool.replace("%data%", this.onlineCourses[course].school));
 			$(".education-entry:last").append(HTMLonlineDates.replace("%data%", this.onlineCourses[course].date));
 			$(".education-entry:last").append(HTMLonlineURL.replace("%data%", this.onlineCourses[course].url));
 		}
