@@ -43,12 +43,33 @@ bio.display = function() {
 var education = {
 	"schools": [
 		{
+			"name": "Cardinal Spellman High School", "location": "Bronx, NY", "degree": "High School Diploma", "majors": [], "dates": "2005-2009", "url": "www.cardinalspellman.org"
+		},
+		{
+			"name": "Polytechnic Institute of NYU", "location": "Brooklyn, NY", "degree": "N/A", "majors": ["Computer Science", "Digital Media"], "dates": "2009-2011", "url": "engineering.nyu.edu"
+		},
+		{
+			"name": "CUNY Bronx Community College", "location": "Bronx, NY", "degree": "N/A", "majors": ["Liberal Arts/Chemistry"], "dates": "2012-2013", "url": "www.bcc.cuny.edu"
+		},
+		{
 			"name": "Monster University", "location": "Monstropolis", "degree": "Masters", "majors": ["Spookology", "Child Psychology"], "dates": "2011-2015", "url": "monsteruniversity.com"
 		}
 	],
 	"onlineCourses": [
 		{
-			"title": "JavaScript Basics", "school": "Udacity", "date": "January, 2016", "url": "udacity.com"
+			"title": "JavaScript", "school": "Codecademy", "date": "September, 2015", "url": "codecademy.com/learn/javascript"
+		},
+		{
+			"title": "Intro to HTML and CSS", "school": "Udacity", "date": "November 2015", "url": "udacity.com/course/intro-to-html-and-css--ud304-nd"
+		},
+		{
+			"title": "Responsive Images", "school": "Udacity", "date": "December 2015", "url": "udacity.com/course/responsive-images--ud882-nd"
+		},
+		{
+			"title": "How to Use Git and Github", "school": "Udacity", "date": "January, 2016", "url": "udacity.com/courses/ud775"
+		},
+		{
+			"title": "JavaScript Basics", "school": "Udacity", "date": "January, 2016", "url": "udacity.com/course/javascript-basics--ud804-nd"
 		}
 	]
 };
