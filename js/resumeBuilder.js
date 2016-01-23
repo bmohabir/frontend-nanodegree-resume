@@ -101,6 +101,9 @@ education.display = function() {
 var work = {
 	"jobs": [
 		{
+			"employer": "Micro Center", "title": "Knowledge Expert", "location": "Yonkers, NY", "dates": "April, 2013-October, 2015", "description": "Help desk support, computer service and repair, consumer technology consultation"
+		},
+		{
 			"employer": "Cinco", "title": "Celery Man", "location": "Detroit, MI", "dates": "February, 2007-May, 2010", "description": "4d3d3d3"
 		}
 	]
