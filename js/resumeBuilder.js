@@ -95,8 +95,20 @@ var projects = {
 				"portfolio1.jpg"
 			]
 		}
-	]
-	// TODO: add display function
+	],
+	"display": function() {
+		for (project in this.projects) {
+			$("#projects").append(HTMLprojectStart);
+			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", this.projects[project].title));
+			$(".project-entry:last").append(HTMLprojectDates.replace("%data%", this.projects[project].dates));
+			$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", this.projects[project].description));
+
+			// display project images
+			for (image in this.projects[project].images) {
+				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", this.projects[project].images[image]));
+			}
+		}
+	}
 };
 
 
@@ -104,3 +116,4 @@ var projects = {
 bio.display();
 education.display();
 work.display();
+projects.display();
