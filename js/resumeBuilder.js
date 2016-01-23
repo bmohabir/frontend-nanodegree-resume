@@ -36,9 +36,9 @@ bio.display = function() {
 		// display skills heading
 		$("#header").append(HTMLskillsStart);
 		// display formatted list of skills
-		for (skill in this.skills) {
-			$("#skills").append(HTMLskills.replace("%data%", this.skills[skill]));
-		}
+		this.skills.forEach(function(skill) {
+			$("#skills").append(HTMLskills.replace("%data%", skill));
+		});
 	}
 };
 
@@ -82,20 +82,20 @@ var education = {
 education.display = function() {
 	// display schools if education object contains any
 	if (this.schools.length > 0) {
-		for (school in this.schools) {
+		this.schools.forEach(function(school) {
 			$("#education").append(HTMLschoolStart);
-			$(".education-entry:last").append(HTMLschoolName.replace("%data%", this.schools[school].name)+HTMLschoolDegree.replace("%data%", this.schools[school].degree));
-			$(".education-entry:last").append(HTMLschoolDates.replace("%data%", this.schools[school].dates));
-			$(".education-entry:last").append(HTMLschoolLocation.replace("%data%", this.schools[school].location));
+			$(".education-entry:last").append(HTMLschoolName.replace("%data%", school.name)+HTMLschoolDegree.replace("%data%", school.degree));
+			$(".education-entry:last").append(HTMLschoolDates.replace("%data%", school.dates));
+			$(".education-entry:last").append(HTMLschoolLocation.replace("%data%", school.location));
 			// display major(s) for school only if applicable
-			if (this.schools[school].majors.length > 0) {
-				var majors = this.schools[school].majors.join(" / ");
+			if (school.majors.length > 0) {
+				var majors = school.majors.join(" / ");
 				$(".education-entry:last").append(HTMLschoolMajor.replace("%data%", majors));
 			} else {
-				// maintain layout spacing if no majors to display
+				// maintain layout if no majors to display
 				$(".education-entry:last").append("<br>");
 			}
-		}
+		});
 	}
 
 	// display online courses if education object contains any
@@ -103,12 +103,12 @@ education.display = function() {
 		// display online courses heading
 		$("#education").append(HTMLonlineClasses);
 		// display formatted online courses list
-		for (course in this.onlineCourses) {
+		this.onlineCourses.forEach(function(course) {
 			$("#education").append(HTMLschoolStart);
-			$(".education-entry:last").append(HTMLonlineTitle.replace("%data%", this.onlineCourses[course].title)+HTMLonlineSchool.replace("%data%", this.onlineCourses[course].school));
-			$(".education-entry:last").append(HTMLonlineDates.replace("%data%", this.onlineCourses[course].date));
-			$(".education-entry:last").append(HTMLonlineURL.replace("%data%", this.onlineCourses[course].url));
-		}
+			$(".education-entry:last").append(HTMLonlineTitle.replace("%data%", course.title)+HTMLonlineSchool.replace("%data%", course.school));
+			$(".education-entry:last").append(HTMLonlineDates.replace("%data%", course.date));
+			$(".education-entry:last").append(HTMLonlineURL.replace("%data%", course.url));
+		});
 	}
 };
 
@@ -130,13 +130,13 @@ work.display = function() {
 	// display jobs if work object contains any
 	if (this.jobs.length > 0) {
 		// display formatted list of jobs
-		for (job in this.jobs) {
+		this.jobs.forEach(function(job) {
 			$("#workExperience").append(HTMLworkStart);
-			$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", this.jobs[job].employer)+HTMLworkTitle.replace("%data%", this.jobs[job].title));
-			$(".work-entry:last").append(HTMLworkDates.replace("%data%", this.jobs[job].dates));
-			$(".work-entry:last").append(HTMLworkLocation.replace("%data%", this.jobs[job].location));
-			$(".work-entry:last").append(HTMLworkDescription.replace("%data%", this.jobs[job].description));
-		}
+			$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", job.employer)+HTMLworkTitle.replace("%data%", job.title));
+			$(".work-entry:last").append(HTMLworkDates.replace("%data%", job.dates));
+			$(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.location));
+			$(".work-entry:last").append(HTMLworkDescription.replace("%data%", job.description));
+		});
 	}
 };
 
@@ -162,17 +162,17 @@ projects.display = function() {
 	// display projects if projects object contains any
 	if (this.projects.length > 0) {
 		// display formatted list of projects
-		for (project in this.projects) {
+		this.projects.forEach(function(project) {
 			$("#projects").append(HTMLprojectStart);
-			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", this.projects[project].title));
-			$(".project-entry:last").append(HTMLprojectDates.replace("%data%", this.projects[project].dates));
-			$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", this.projects[project].description));
+			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", project.title));
+			$(".project-entry:last").append(HTMLprojectDates.replace("%data%", project.dates));
+			$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", project.description));
 
 			// display project images
-			for (image in this.projects[project].images) {
-				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", this.projects[project].images[image]));
-			}
-		}
+			project.images.forEach(function(image) {
+				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", image));
+			});
+		});
 	}
 };
 
