@@ -78,8 +78,18 @@ var work = {
 			"employer": "Cinco", "title": "Celery Man", "location": "Detroit, MI", "dates": "February, 2007-May, 2010", "description": "4d3d3d3"
 		}
 	]
-	// TODO: add display function
+	"display": function() {
+		for (job in this.jobs) {
+			$("#workExperience").append(HTMLworkStart);
+			$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", this.jobs[job].employer)+HTMLworkTitle.replace("%data%", this.jobs[job].title));
+			$(".work-entry:last").append(HTMLworkDates.replace("%data%", this.jobs[job].dates));
+			$(".work-entry:last").append(HTMLworkLocation.replace("%data%", this.jobs[job].location));
+			$(".work-entry:last").append(HTMLworkDescription.replace("%data%", this.jobs[job].description));
+		}
+	}
 };
+
+work.display();
 
 var projects = {
 	"projects": [
