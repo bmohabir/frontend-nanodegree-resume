@@ -27,7 +27,7 @@ var education = {
 		}
 	]
 	// TODO: add display function
-}
+};
 
 var work = {
 	"jobs": [
@@ -36,7 +36,7 @@ var work = {
 		}
 	]
 	// TODO: add display function
-}
+};
 
 var projects = {
 	"projects": [
@@ -47,4 +47,4 @@ var projects = {
 		}
 	]
 	// TODO: add display function
-}
+};
