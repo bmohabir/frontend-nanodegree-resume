@@ -8,7 +8,7 @@ var bio = {
 		"github": "github.com/bmohabir/",
 		"location": "Bronx, NY"
 	},
-	"biopic": "biopic.jpg",
+	"biopic": "http://i.imgur.com/O93x1dH.jpg",
 	"welcomeMessage": "Welcome to my web programming adventure!",
 	"skills": [
 		"HTML5", "JavaScript", "CSS3", "PC and Mac expert"
