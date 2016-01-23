@@ -25,7 +25,7 @@ var bio = {
 
 		// display pic and welcome msg
 		$("#header").append(HTMLbioPic.replace("%data%", this.biopic));
-		$("#header").append(HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage));
+		$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 
 		// display skills
 		$("#header").append(HTMLskillsStart);
