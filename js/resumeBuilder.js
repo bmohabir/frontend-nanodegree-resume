@@ -35,7 +35,6 @@ var bio = {
 	}
 };
 
-bio.display();
 
 var education = {
 	"schools": [
@@ -70,7 +69,6 @@ var education = {
 	}
 };
 
-education.display();
 
 var work = {
 	"jobs": [
@@ -89,7 +87,6 @@ var work = {
 	}
 };
 
-work.display();
 
 var projects = {
 	"projects": [
@@ -101,3 +98,9 @@ var projects = {
 	]
 	// TODO: add display function
 };
+
+
+// call display methods for each HTML section
+bio.display();
+education.display();
+work.display();
