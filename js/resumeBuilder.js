@@ -61,19 +61,19 @@ var education = {
 	],
 	"onlineCourses": [
 		{
-			"title": "JavaScript", "school": "Codecademy", "date": "September, 2015", "url": "codecademy.com/learn/javascript"
+			"title": "JavaScript", "school": "Codecademy", "date": "September, 2015", "url": "https://www.codecademy.com/learn/javascript"
 		},
 		{
-			"title": "Intro to HTML and CSS", "school": "Udacity", "date": "November 2015", "url": "udacity.com/course/intro-to-html-and-css--ud304-nd"
+			"title": "Intro to HTML and CSS", "school": "Udacity", "date": "November 2015", "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304-nd"
 		},
 		{
-			"title": "Responsive Images", "school": "Udacity", "date": "December 2015", "url": "udacity.com/course/responsive-images--ud882-nd"
+			"title": "Responsive Images", "school": "Udacity", "date": "December 2015", "url": "https://www.udacity.com/course/responsive-images--ud882-nd"
 		},
 		{
-			"title": "How to Use Git and Github", "school": "Udacity", "date": "January, 2016", "url": "udacity.com/courses/ud775"
+			"title": "How to Use Git and Github", "school": "Udacity", "date": "January, 2016", "url": "https://www.udacity.com/courses/ud775"
 		},
 		{
-			"title": "JavaScript Basics", "school": "Udacity", "date": "January, 2016", "url": "udacity.com/course/javascript-basics--ud804-nd"
+			"title": "JavaScript Basics", "school": "Udacity", "date": "January, 2016", "url": "https://www.udacity.com/course/javascript-basics--ud804-nd"
 		}
 	]
 };
