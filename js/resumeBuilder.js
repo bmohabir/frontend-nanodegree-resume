@@ -29,3 +29,11 @@ var education = {
 	// TODO: add display function
 }
 
+var work = {
+	"jobs": [
+		{
+			"employer": "Cinco", "title": "Celery Man", "location": "Detroit, MI", "dates": "February, 2007-May, 2010", "description": "4d3d3d3"
+		}
+	]
+	// TODO: add display function
+}
