@@ -31,10 +31,14 @@ bio.display = function() {
 	$("#header").append(HTMLbioPic.replace("%data%", this.biopic));
 	$("#header").append(HTMLwelcomeMsg.replace("%data%", this.welcomeMessage));
 
-	// display skills
-	$("#header").append(HTMLskillsStart);
-	for (skill in this.skills) {
-		$("#skills").append(HTMLskills.replace("%data%", this.skills[skill]));
+	// display skills if bio contains any
+	if (this.skills.length > 0) {
+		// display skills heading
+		$("#header").append(HTMLskillsStart);
+		// display formatted list of skills
+		for (skill in this.skills) {
+			$("#skills").append(HTMLskills.replace("%data%", this.skills[skill]));
+		}
 	}
 };
 
@@ -76,23 +80,35 @@ var education = {
 
 // method for formatting and displaying data contained in education object
 education.display = function() {
-	// display schools
-	for (school in this.schools) {
-		$("#education").append(HTMLschoolStart);
-		$(".education-entry:last").append(HTMLschoolName.replace("%data%", this.schools[school].name)+HTMLschoolDegree.replace("%data%", this.schools[school].degree));
-		$(".education-entry:last").append(HTMLschoolDates.replace("%data%", this.schools[school].dates));
-		$(".education-entry:last").append(HTMLschoolLocation.replace("%data%", this.schools[school].location));
-		var majors = this.schools[school].majors.join(" / ");
-		$(".education-entry:last").append(HTMLschoolMajor.replace("%data%", majors));
+	// display schools if education object contains any
+	if (this.schools.length > 0) {
+		for (school in this.schools) {
+			$("#education").append(HTMLschoolStart);
+			$(".education-entry:last").append(HTMLschoolName.replace("%data%", this.schools[school].name)+HTMLschoolDegree.replace("%data%", this.schools[school].degree));
+			$(".education-entry:last").append(HTMLschoolDates.replace("%data%", this.schools[school].dates));
+			$(".education-entry:last").append(HTMLschoolLocation.replace("%data%", this.schools[school].location));
+			// display major(s) for school only if applicable
+			if (this.schools[school].majors.length > 0) {
+				var majors = this.schools[school].majors.join(" / ");
+				$(".education-entry:last").append(HTMLschoolMajor.replace("%data%", majors));
+			} else {
+				// maintain layout spacing if no majors to display
+				$(".education-entry:last").append("<br>");
+			}
+		}
 	}
 
-	// display online courses
-	$("#education").append(HTMLonlineClasses);
-	for (course in this.onlineCourses) {
-		$("#education").append(HTMLschoolStart);
-		$(".education-entry:last").append(HTMLonlineTitle.replace("%data%", this.onlineCourses[course].title)+HTMLonlineSchool.replace("%data%", this.onlineCourses[course].school));
-		$(".education-entry:last").append(HTMLonlineDates.replace("%data%", this.onlineCourses[course].date));
-		$(".education-entry:last").append(HTMLonlineURL.replace("%data%", this.onlineCourses[course].url));
+	// display online courses if education object contains any
+	if (this.onlineCourses.length > 0) {
+		// display online courses heading
+		$("#education").append(HTMLonlineClasses);
+		// display formatted online courses list
+		for (course in this.onlineCourses) {
+			$("#education").append(HTMLschoolStart);
+			$(".education-entry:last").append(HTMLonlineTitle.replace("%data%", this.onlineCourses[course].title)+HTMLonlineSchool.replace("%data%", this.onlineCourses[course].school));
+			$(".education-entry:last").append(HTMLonlineDates.replace("%data%", this.onlineCourses[course].date));
+			$(".education-entry:last").append(HTMLonlineURL.replace("%data%", this.onlineCourses[course].url));
+		}
 	}
 };
 
@@ -111,12 +127,16 @@ var work = {
 
 // method for formatting and displaying data contained in work object
 work.display = function() {
-	for (job in this.jobs) {
-		$("#workExperience").append(HTMLworkStart);
-		$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", this.jobs[job].employer)+HTMLworkTitle.replace("%data%", this.jobs[job].title));
-		$(".work-entry:last").append(HTMLworkDates.replace("%data%", this.jobs[job].dates));
-		$(".work-entry:last").append(HTMLworkLocation.replace("%data%", this.jobs[job].location));
-		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", this.jobs[job].description));
+	// display jobs if work object contains any
+	if (this.jobs.length > 0) {
+		// display formatted list of jobs
+		for (job in this.jobs) {
+			$("#workExperience").append(HTMLworkStart);
+			$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", this.jobs[job].employer)+HTMLworkTitle.replace("%data%", this.jobs[job].title));
+			$(".work-entry:last").append(HTMLworkDates.replace("%data%", this.jobs[job].dates));
+			$(".work-entry:last").append(HTMLworkLocation.replace("%data%", this.jobs[job].location));
+			$(".work-entry:last").append(HTMLworkDescription.replace("%data%", this.jobs[job].description));
+		}
 	}
 };
 
@@ -139,15 +159,19 @@ var projects = {
 
 // method for formatting and displaying data contained in projects object
 projects.display = function() {
-	for (project in this.projects) {
-		$("#projects").append(HTMLprojectStart);
-		$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", this.projects[project].title));
-		$(".project-entry:last").append(HTMLprojectDates.replace("%data%", this.projects[project].dates));
-		$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", this.projects[project].description));
+	// display projects if projects object contains any
+	if (this.projects.length > 0) {
+		// display formatted list of projects
+		for (project in this.projects) {
+			$("#projects").append(HTMLprojectStart);
+			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", this.projects[project].title));
+			$(".project-entry:last").append(HTMLprojectDates.replace("%data%", this.projects[project].dates));
+			$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", this.projects[project].description));
 
-		// display project images
-		for (image in this.projects[project].images) {
-			$(".project-entry:last").append(HTMLprojectImage.replace("%data%", this.projects[project].images[image]));
+			// display project images
+			for (image in this.projects[project].images) {
+				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", this.projects[project].images[image]));
+			}
 		}
 	}
 };
