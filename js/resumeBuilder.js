@@ -17,7 +17,7 @@ var bio = {
 
 // method for formatting and displaying data contained in bio object
 bio.display = function() {
-	//display name and role
+	// display name and role
 	$("#header").prepend(HTMLheaderRole.replace("%data%", this.role));
 	$("#header").prepend(HTMLheaderName.replace("%data%", this.name));
 
@@ -198,6 +198,7 @@ projects.display = function() {
 		});
 	}
 };
+
 
 // call display methods for each HTML section
 bio.display();
