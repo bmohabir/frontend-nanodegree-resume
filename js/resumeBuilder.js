@@ -11,9 +11,31 @@ var bio = {
 	"welcomeMessage": "Welcome to my web programming adventure!",
 	"skills": [
 		"HTML5", "JavaScript", "CSS3", "PC and Mac expert"
-	]
-	// TODO: add display function
+	],
+	"display": function() {
+		//display name and role
+		$("#header").prepend(HTMLheaderRole.replace("%data%", this.role));
+		$("#header").prepend(HTMLheaderName.replace("%data%", this.name));
+
+		// display contacts
+		$("#topContacts").append(HTMLmobile.replace("%data%", this.contacts["mobile"]));
+		$("#topContacts").append(HTMLemail.replace("%data%", this.contacts["email"]));
+		$("#topContacts").append(HTMLgithub.replace("%data%", this.contacts["github"]));
+		$("#topContacts").append(HTMLlocation.replace("%data%", this.contacts["location"]));
+
+		// display pic and welcome msg
+		$("#header").append(HTMLbioPic.replace("%data%", this.biopic));
+		$("#header").append(HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage));
+
+		// display skills
+		$("#header").append(HTMLskillsStart);
+		for (skill in this.skills) {
+			$("#skills").append(HTMLskills.replace("%data%", this.skills[skill]));
+		}
+	}
 };
+
+bio.display();
 
 var education = {
 	"schools": [
