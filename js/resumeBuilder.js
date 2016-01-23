@@ -126,7 +126,12 @@ var projects = {
 	"projects": [
 		{
 			"title": "Portfolio", "dates": "November 2015-December 2015", "description": "My portfolio", "images": [
-				"portfolio1.jpg"
+				"http://lorempixel.com/400/200/technics/6/", "http://lorempixel.com/400/200/technics/7/"
+			]
+		},
+		{
+			"title": "Resume", "dates": "December 2015-January 2016", "description": "This resume", "images": [
+				"http://lorempixel.com/400/200/technics/3/"
 			]
 		}
 	]
