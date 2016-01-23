@@ -37,3 +37,14 @@ var work = {
 	]
 	// TODO: add display function
 }
+
+var projects = {
+	"projects": [
+		{
+			"title": "Portfolio", "dates": "November 2015-December 2015", "description": "My portfolio", "images": [
+				"portfolio1.jpg"
+			]
+		}
+	]
+	// TODO: add display function
+}
