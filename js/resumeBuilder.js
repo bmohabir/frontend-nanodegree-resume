@@ -14,3 +14,18 @@ var bio = {
 	]
 	// TODO: add display function
 };
+
+var education = {
+	"schools": [
+		{
+			"name": "Monster University", "location": "Monstropolis", "degree": "Masters", "majors": ["Spookology", "Child Psychology"], "dates": "2011-2015", "url": "monsteruniversity.com"
+		}
+	],
+	"onlineCourses": [
+		{
+			"title": "JavaScript Basics", "school": "Udacity", "date": "January, 2016", "url": "udacity.com"
+		}
+	]
+	// TODO: add display function
+}
+
