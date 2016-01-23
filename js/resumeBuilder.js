@@ -77,7 +77,7 @@ var work = {
 		{
 			"employer": "Cinco", "title": "Celery Man", "location": "Detroit, MI", "dates": "February, 2007-May, 2010", "description": "4d3d3d3"
 		}
-	]
+	],
 	"display": function() {
 		for (job in this.jobs) {
 			$("#workExperience").append(HTMLworkStart);
