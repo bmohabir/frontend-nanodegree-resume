@@ -21,11 +21,34 @@ bio.display = function() {
 	$("#header").prepend(HTMLheaderRole.replace("%data%", this.role));
 	$("#header").prepend(HTMLheaderName.replace("%data%", this.name));
 
-	// display contacts
-	$("#topContacts").append(HTMLmobile.replace("%data%", this.contacts["mobile"]));
-	$("#topContacts").append(HTMLemail.replace("%data%", this.contacts["email"]));
-	$("#topContacts").append(HTMLgithub.replace("%data%", this.contacts["github"]));
-	$("#topContacts").append(HTMLlocation.replace("%data%", this.contacts["location"]));
+	// format and display contacts that exist in bio object
+	if (Object.keys(this.contacts).length > 0) {
+		var formattedContacts = [];
+
+		if (this.contacts["mobile"]) {
+			formattedContacts.push(HTMLmobile.replace("%data%", this.contacts["mobile"]));
+		}
+		if (this.contacts["email"]) {
+			formattedContacts.push(HTMLemail.replace("%data%", this.contacts["email"]));
+		}
+		if (this.contacts["twitter"]) {
+			formattedContacts.push(HTMLtwitter.replace("%data%", this.contacts["twitter"]));
+		}
+		if (this.contacts["github"]) {
+			formattedContacts.push(HTMLgithub.replace("%data%", this.contacts["github"]));
+		}
+		if (this.contacts["blog"]) {
+			formattedContacts.push(HTMLblog.replace("%data%", this.contacts["blog"]));
+		}
+		if (this.contacts["location"]) {
+			formattedContacts.push(HTMLlocation.replace("%data%", this.contacts["location"]));
+		}
+
+		formattedContacts.forEach(function(contact) {
+			$("#topContacts").append(contact);
+			$("#footerContacts").append(contact);
+		});
+	}
 
 	// display pic and welcome msg
 	$("#header").append(HTMLbioPic.replace("%data%", this.biopic));
