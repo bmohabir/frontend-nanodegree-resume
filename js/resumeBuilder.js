@@ -117,3 +117,7 @@ bio.display();
 education.display();
 work.display();
 projects.display();
+
+
+// display Google Map
+$("#mapDiv").append(googleMap);
