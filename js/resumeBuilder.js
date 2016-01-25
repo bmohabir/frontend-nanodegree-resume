@@ -6,6 +6,7 @@ var bio = {
 	"contacts": {
 		"mobile": "917-375-2806",
 		"email": "bmohabir01@gmail.com",
+		"twitter": "#nope",
 		"github": "github.com/bmohabir",
 		"location": "Bronx, NY"
 	},
