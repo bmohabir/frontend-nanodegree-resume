@@ -10,9 +10,7 @@ var bio = {
 	},
 	"biopic": "http://i.imgur.com/O93x1dH.jpg",
 	"welcomeMessage": "Welcome to my web programming adventure!",
-	"skills": [
-		"HTML5", "JavaScript", "CSS3", "PC and Mac expert"
-	]
+	"skills": ["HTML5", "JavaScript", "CSS3", "PC and Mac expert"]
 };
 
 // method for formatting and displaying data contained in bio object
@@ -79,33 +77,65 @@ bio.display = function() {
 var education = {
 	"schools": [
 		{
-			"name": "Cardinal Spellman High School", "location": "Bronx, NY", "degree": "High School Diploma", "majors": [], "dates": "2005-2009", "url": "www.cardinalspellman.org"
+			"name": "Cardinal Spellman High School",
+			"location": "Bronx, NY",
+			"degree": "High School Diploma",
+			"majors": [], "dates": "2005-2009",
+			"url": "www.cardinalspellman.org"
 		},
 		{
-			"name": "Polytechnic Institute of NYU", "location": "Brooklyn, NY", "degree": "N/A", "majors": ["Computer Science", "Digital Media"], "dates": "2009-2011", "url": "engineering.nyu.edu"
+			"name": "Polytechnic Institute of NYU",
+			"location": "Brooklyn, NY", "degree": "N/A",
+			"majors": ["Computer Science", "Digital Media"],
+			"dates": "2009-2011",
+			"url": "engineering.nyu.edu"
 		},
 		{
-			"name": "CUNY Bronx Community College", "location": "Bronx, NY", "degree": "N/A", "majors": ["Liberal Arts/Chemistry"], "dates": "2012-2013", "url": "www.bcc.cuny.edu"
+			"name": "CUNY Bronx Community College",
+			"location": "Bronx, NY", "degree": "N/A",
+			"majors": ["Liberal Arts/Chemistry"],
+			"dates": "2012-2013",
+			"url": "www.bcc.cuny.edu"
 		},
 		{
-			"name": "Monster University", "location": "Monstropolis", "degree": "Masters", "majors": ["Spookology", "Child Psychology"], "dates": "2011-2015", "url": "monsteruniversity.com"
+			"name": "Monster University",
+			"location": "Monstropolis",
+			"degree": "Masters",
+			"majors": ["Spookology", "Child Psychology"],
+			"dates": "2011-2015",
+			"url": "monsteruniversity.com"
 		}
 	],
 	"onlineCourses": [
 		{
-			"title": "JavaScript", "school": "Codecademy", "date": "September, 2015", "url": "https://www.codecademy.com/learn/javascript"
+			"title": "JavaScript",
+			"school": "Codecademy",
+			"date": "September, 2015",
+			"url": "https://www.codecademy.com/learn/javascript"
 		},
 		{
-			"title": "Intro to HTML and CSS", "school": "Udacity", "date": "November 2015", "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304-nd"
+			"title": "Intro to HTML and CSS",
+			"school": "Udacity",
+			"date": "November 2015",
+			"url": "https://www.udacity.com/course/intro-to-html-and-css--ud304-nd"
 		},
 		{
-			"title": "Responsive Images", "school": "Udacity", "date": "December 2015", "url": "https://www.udacity.com/course/responsive-images--ud882-nd"
+			"title": "Responsive Images",
+			"school": "Udacity",
+			"date": "December 2015",
+			"url": "https://www.udacity.com/course/responsive-images--ud882-nd"
 		},
 		{
-			"title": "How to Use Git and Github", "school": "Udacity", "date": "January, 2016", "url": "https://www.udacity.com/courses/ud775"
+			"title": "How to Use Git and Github",
+			"school": "Udacity",
+			"date": "January, 2016",
+			"url": "https://www.udacity.com/courses/ud775"
 		},
 		{
-			"title": "JavaScript Basics", "school": "Udacity", "date": "January, 2016", "url": "https://www.udacity.com/course/javascript-basics--ud804-nd"
+			"title": "JavaScript Basics",
+			"school": "Udacity",
+			"date": "January, 2016",
+			"url": "https://www.udacity.com/course/javascript-basics--ud804-nd"
 		}
 	]
 };
@@ -149,10 +179,18 @@ education.display = function() {
 var work = {
 	"jobs": [
 		{
-			"employer": "Micro Center", "title": "Knowledge Expert", "location": "Yonkers, NY", "dates": "April, 2013-October, 2015", "description": "Help desk support, computer service and repair, consumer technology consultation"
+			"employer": "Micro Center",
+			"title": "Knowledge Expert",
+			"location": "Yonkers, NY",
+			"dates": "April, 2013-October, 2015",
+			"description": "Help desk support, computer service and repair, consumer technology consultation"
 		},
 		{
-			"employer": "Cinco", "title": "Celery Man", "location": "Detroit, MI", "dates": "February, 2007-May, 2010", "description": "4d3d3d3"
+			"employer": "Cinco",
+			"title": "Celery Man",
+			"location": "Detroit, MI",
+			"dates": "February, 2007-May, 2010",
+			"description": "4d3d3d3"
 		}
 	]
 };
@@ -177,14 +215,16 @@ work.display = function() {
 var projects = {
 	"projects": [
 		{
-			"title": "Portfolio", "dates": "November 2015-December 2015", "description": "My portfolio", "images": [
-				"http://lorempixel.com/400/200/technics/6/", "http://lorempixel.com/400/200/technics/7/"
-			]
+			"title": "Portfolio",
+			"dates": "November 2015-December 2015",
+			"description": "My portfolio",
+			"images": ["http://lorempixel.com/400/200/technics/6/", "http://lorempixel.com/400/200/technics/7/"]
 		},
 		{
-			"title": "Resume", "dates": "December 2015-January 2016", "description": "This resume", "images": [
-				"http://lorempixel.com/400/200/technics/3/"
-			]
+			"title": "Resume",
+			"dates": "December 2015-January 2016",
+			"description": "This resume",
+			"images": ["http://lorempixel.com/400/200/technics/3/"]
 		}
 	]
 };
