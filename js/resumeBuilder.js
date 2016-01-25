@@ -17,18 +17,18 @@ var bio = {
 
 // method for formatting and displaying data contained in bio object
 bio.display = function() {
-	var $header = $("#header");
-	var contacts = this.contacts;
-	var skills = this.skills;
+	var $header = $("#header"),
+		contacts = this.contacts,
+		skills = this.skills;
 	// display name and role
 	$header.prepend(HTMLheaderName.replace(data, this.name)+HTMLheaderRole.replace(data, this.role));
 
 	// format and display contacts that exist in bio object
 	if (Object.keys(contacts).length > 0) {
-		var formattedContacts = [];
-
+		var formattedContacts = [],
+			contact;
 		// format each contact depending on type
-		var contact;
+
 		for (contact in contacts) {
 			if (contacts.hasOwnProperty(contact) && contacts[contact].length > 0) {
 				switch(contact) {
@@ -144,9 +144,9 @@ var education = {
 
 // method for formatting and displaying data contained in education object
 education.display = function() {
-	var $education = $("#education");
-	var schools = this.schools;
-	var courses = this.onlineCourses;
+	var $education = $("#education"),
+		schools = this.schools,
+		courses = this.onlineCourses;
 	// display schools if education object contains any
 	if (schools.length > 0) {
 		schools.forEach(function(school) {
