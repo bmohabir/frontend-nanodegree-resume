@@ -28,27 +28,29 @@ bio.display = function() {
 		// format each contact depending on type
 		var contact;
 		for (contact in this.contacts) {
-			switch(contact) {
-				case "mobile":
-					formattedContacts.push(HTMLmobile.replace(data, this.contacts["mobile"]));
-					break;
-				case "email":
-					formattedContacts.push(HTMLemail.replace(data, this.contacts["email"]));
-					break;
-				case "twitter":
-					formattedContacts.push(HTMLtwitter.replace(data, this.contacts["twitter"]));
-					break;
-				case "github":
-					formattedContacts.push(HTMLgithub.replace(data, this.contacts["github"]));
-					break;
-				case "blog":
-					formattedContacts.push(HTMLblog.replace(data, this.contacts["blog"]));
-					break;
-				case "location":
-					formattedContacts.push(HTMLlocation.replace(data, this.contacts["location"]));
-					break;
-				default:
-					formattedContacts.push(HTMLcontactGeneric.replace(data, this.contacts[contact]));
+			if (this.contacts.hasOwnProperty(contact) && this.contacts[contact].length > 0) {
+				switch(contact) {
+					case "mobile":
+						formattedContacts.push(HTMLmobile.replace(data, this.contacts["mobile"]));
+						break;
+					case "email":
+						formattedContacts.push(HTMLemail.replace(data, this.contacts["email"]));
+						break;
+					case "twitter":
+						formattedContacts.push(HTMLtwitter.replace(data, this.contacts["twitter"]));
+						break;
+					case "github":
+						formattedContacts.push(HTMLgithub.replace(data, this.contacts["github"]));
+						break;
+					case "blog":
+						formattedContacts.push(HTMLblog.replace(data, this.contacts["blog"]));
+						break;
+					case "location":
+						formattedContacts.push(HTMLlocation.replace(data, this.contacts["location"]));
+						break;
+					default:
+						formattedContacts.push(HTMLcontactGeneric.replace(data, this.contacts[contact]));
+				}
 			}
 		}
 
