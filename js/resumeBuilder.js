@@ -18,38 +18,40 @@ var bio = {
 // method for formatting and displaying data contained in bio object
 bio.display = function() {
 	var $header = $("#header");
+	var contacts = this.contacts;
+	var skills = this.skills;
 	// display name and role
 	$header.prepend(HTMLheaderName.replace(data, this.name)+HTMLheaderRole.replace(data, this.role));
 
 	// format and display contacts that exist in bio object
-	if (Object.keys(this.contacts).length > 0) {
+	if (Object.keys(contacts).length > 0) {
 		var formattedContacts = [];
 
 		// format each contact depending on type
 		var contact;
-		for (contact in this.contacts) {
-			if (this.contacts.hasOwnProperty(contact) && this.contacts[contact].length > 0) {
+		for (contact in contacts) {
+			if (contacts.hasOwnProperty(contact) && contacts[contact].length > 0) {
 				switch(contact) {
 					case "mobile":
-						formattedContacts.push(HTMLmobile.replace(data, this.contacts["mobile"]));
+						formattedContacts.push(HTMLmobile.replace(data, contacts["mobile"]));
 						break;
 					case "email":
-						formattedContacts.push(HTMLemail.replace(data, this.contacts["email"]));
+						formattedContacts.push(HTMLemail.replace(data, contacts["email"]));
 						break;
 					case "twitter":
-						formattedContacts.push(HTMLtwitter.replace(data, this.contacts["twitter"]));
+						formattedContacts.push(HTMLtwitter.replace(data, contacts["twitter"]));
 						break;
 					case "github":
-						formattedContacts.push(HTMLgithub.replace(data, this.contacts["github"]));
+						formattedContacts.push(HTMLgithub.replace(data, contacts["github"]));
 						break;
 					case "blog":
-						formattedContacts.push(HTMLblog.replace(data, this.contacts["blog"]));
+						formattedContacts.push(HTMLblog.replace(data, contacts["blog"]));
 						break;
 					case "location":
-						formattedContacts.push(HTMLlocation.replace(data, this.contacts["location"]));
+						formattedContacts.push(HTMLlocation.replace(data, contacts["location"]));
 						break;
 					default:
-						formattedContacts.push(HTMLcontactGeneric.replace(data, this.contacts[contact]));
+						formattedContacts.push(HTMLcontactGeneric.replace(data, contacts[contact]));
 				}
 			}
 		}
@@ -64,11 +66,11 @@ bio.display = function() {
 	$header.append(HTMLbioPic.replace(data, this.biopic)+HTMLwelcomeMsg.replace(data, this.welcomeMessage));
 
 	// display skills if bio contains any
-	if (this.skills.length > 0) {
+	if (skills.length > 0) {
 		// display skills heading
 		$header.append(HTMLskillsStart);
 		// display formatted list of skills
-		this.skills.forEach(function(skill) {
+		skills.forEach(function(skill) {
 			$("#skills").append(HTMLskills.replace(data, skill));
 		});
 	}
@@ -143,9 +145,11 @@ var education = {
 // method for formatting and displaying data contained in education object
 education.display = function() {
 	var $education = $("#education");
+	var schools = this.schools;
+	var courses = this.onlineCourses;
 	// display schools if education object contains any
-	if (this.schools.length > 0) {
-		this.schools.forEach(function(school) {
+	if (schools.length > 0) {
+		schools.forEach(function(school) {
 			$education.append(HTMLschoolStart);
 			$(".education-entry:last").append(HTMLschoolName.replace(data, school.name)+
 				HTMLschoolDegree.replace(data, school.degree)+
@@ -163,11 +167,11 @@ education.display = function() {
 	}
 
 	// display online courses if education object contains any
-	if (this.onlineCourses.length > 0) {
+	if (courses.length > 0) {
 		// display online courses heading
 		$education.append(HTMLonlineClasses);
 		// display formatted online courses list
-		this.onlineCourses.forEach(function(course) {
+		courses.forEach(function(course) {
 			$education.append(HTMLschoolStart);
 			$(".education-entry:last").append(HTMLonlineTitle.replace(data, course.title)+
 				HTMLonlineSchool.replace(data, course.school)+
@@ -199,10 +203,11 @@ var work = {
 
 // method for formatting and displaying data contained in work object
 work.display = function() {
+	var jobs = this.jobs;
 	// display jobs if work object contains any
-	if (this.jobs.length > 0) {
+	if (jobs.length > 0) {
 		// display formatted list of jobs
-		this.jobs.forEach(function(job) {
+		jobs.forEach(function(job) {
 			$("#workExperience").append(HTMLworkStart);
 			$(".work-entry:last").append(HTMLworkEmployer.replace(data, job.employer)+
 				HTMLworkTitle.replace(data, job.title)+
@@ -233,10 +238,11 @@ var projects = {
 
 // method for formatting and displaying data contained in projects object
 projects.display = function() {
+	var projects = this.projects;
 	// display projects if projects object contains any
-	if (this.projects.length > 0) {
+	if (projects.length > 0) {
 		// display formatted list of projects
-		this.projects.forEach(function(project) {
+		projects.forEach(function(project) {
 			$("#projects").append(HTMLprojectStart);
 			$(".project-entry:last").append(HTMLprojectTitle.replace(data, project.title)+
 				HTMLprojectDates.replace(data, project.dates)+
