@@ -46,7 +46,6 @@ bio.display = function() {
 					break;
 				default:
 					formattedContacts.push(HTMLcontactGeneric.replace("%data%", this.contacts[contact]));
-
 			}
 		}
 
@@ -75,8 +74,7 @@ bio.display = function() {
 
 // object containing education data
 var education = {
-	"schools": [
-		{
+	"schools": [{
 			"name": "Cardinal Spellman High School",
 			"location": "Bronx, NY",
 			"degree": "High School Diploma",
@@ -106,8 +104,7 @@ var education = {
 			"url": "monsteruniversity.com"
 		}
 	],
-	"onlineCourses": [
-		{
+	"onlineCourses": [{
 			"title": "JavaScript",
 			"school": "Codecademy",
 			"date": "September, 2015",
@@ -177,8 +174,7 @@ education.display = function() {
 
 // object containing employment data
 var work = {
-	"jobs": [
-		{
+	"jobs": [{
 			"employer": "Micro Center",
 			"title": "Knowledge Expert",
 			"location": "Yonkers, NY",
@@ -213,8 +209,7 @@ work.display = function() {
 
 // object containing projects data
 var projects = {
-	"projects": [
-		{
+	"projects": [{
 			"title": "Portfolio",
 			"dates": "November 2015-December 2015",
 			"description": "My portfolio",
