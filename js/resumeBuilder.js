@@ -26,6 +26,7 @@ bio.display = function() {
 		var formattedContacts = [];
 
 		// format each contact depending on type
+		var contact;
 		for (contact in this.contacts) {
 			switch(contact) {
 				case "mobile":
