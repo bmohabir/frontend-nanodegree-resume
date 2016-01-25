@@ -29,10 +29,11 @@ h6 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 42px;
   color: #f5a623;
   line-height: 48px;
   display: inline;
+  font-weight: 100;
 }
 
 h2 {
@@ -119,8 +120,11 @@ a {
 }
 
 .white-text {
-  font-weight: bold;
   color: #fff;
+}
+
+.dim-text {
+  color: #ddd;
 }
 
 .gray {
@@ -129,13 +133,13 @@ a {
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
+.san-marino {
+  background-color: #536D9C;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #536D9C;
 }
 
 .flex-box {
