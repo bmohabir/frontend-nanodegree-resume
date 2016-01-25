@@ -25,25 +25,34 @@ bio.display = function() {
 	if (Object.keys(this.contacts).length > 0) {
 		var formattedContacts = [];
 
-		if (this.contacts["mobile"]) {
-			formattedContacts.push(HTMLmobile.replace("%data%", this.contacts["mobile"]));
-		}
-		if (this.contacts["email"]) {
-			formattedContacts.push(HTMLemail.replace("%data%", this.contacts["email"]));
-		}
-		if (this.contacts["twitter"]) {
-			formattedContacts.push(HTMLtwitter.replace("%data%", this.contacts["twitter"]));
-		}
-		if (this.contacts["github"]) {
-			formattedContacts.push(HTMLgithub.replace("%data%", this.contacts["github"]));
-		}
-		if (this.contacts["blog"]) {
-			formattedContacts.push(HTMLblog.replace("%data%", this.contacts["blog"]));
-		}
-		if (this.contacts["location"]) {
-			formattedContacts.push(HTMLlocation.replace("%data%", this.contacts["location"]));
+		// format each contact depending on type
+		for (contact in this.contacts) {
+			switch(contact) {
+				case "mobile":
+					formattedContacts.push(HTMLmobile.replace("%data%", this.contacts["mobile"]));
+					break;
+				case "email":
+					formattedContacts.push(HTMLemail.replace("%data%", this.contacts["email"]));
+					break;
+				case "twitter":
+					formattedContacts.push(HTMLtwitter.replace("%data%", this.contacts["twitter"]));
+					break;
+				case "github":
+					formattedContacts.push(HTMLgithub.replace("%data%", this.contacts["github"]));
+					break;
+				case "blog":
+					formattedContacts.push(HTMLblog.replace("%data%", this.contacts["blog"]));
+					break;
+				case "location":
+					formattedContacts.push(HTMLlocation.replace("%data%", this.contacts["location"]));
+					break;
+				default:
+					formattedContacts.push(HTMLcontactGeneric.replace("%data%", this.contacts[contact]));
+
+			}
 		}
 
+		// display contacts in header and footer
 		formattedContacts.forEach(function(contact) {
 			$("#topContacts").append(contact);
 			$("#footerContacts").append(contact);
