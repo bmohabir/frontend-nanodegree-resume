@@ -1,3 +1,4 @@
+var data = "%data%";
 // object containing biography data
 var bio = {
 	"name": "Basil Mohabir",
@@ -15,9 +16,9 @@ var bio = {
 
 // method for formatting and displaying data contained in bio object
 bio.display = function() {
+	var $header = $("#header");
 	// display name and role
-	$("#header").prepend(HTMLheaderRole.replace("%data%", this.role));
-	$("#header").prepend(HTMLheaderName.replace("%data%", this.name));
+	$header.prepend(HTMLheaderName.replace(data, this.name)+HTMLheaderRole.replace(data, this.role));
 
 	// format and display contacts that exist in bio object
 	if (Object.keys(this.contacts).length > 0) {
@@ -27,46 +28,44 @@ bio.display = function() {
 		for (contact in this.contacts) {
 			switch(contact) {
 				case "mobile":
-					formattedContacts.push(HTMLmobile.replace("%data%", this.contacts["mobile"]));
+					formattedContacts.push(HTMLmobile.replace(data, this.contacts["mobile"]));
 					break;
 				case "email":
-					formattedContacts.push(HTMLemail.replace("%data%", this.contacts["email"]));
+					formattedContacts.push(HTMLemail.replace(data, this.contacts["email"]));
 					break;
 				case "twitter":
-					formattedContacts.push(HTMLtwitter.replace("%data%", this.contacts["twitter"]));
+					formattedContacts.push(HTMLtwitter.replace(data, this.contacts["twitter"]));
 					break;
 				case "github":
-					formattedContacts.push(HTMLgithub.replace("%data%", this.contacts["github"]));
+					formattedContacts.push(HTMLgithub.replace(data, this.contacts["github"]));
 					break;
 				case "blog":
-					formattedContacts.push(HTMLblog.replace("%data%", this.contacts["blog"]));
+					formattedContacts.push(HTMLblog.replace(data, this.contacts["blog"]));
 					break;
 				case "location":
-					formattedContacts.push(HTMLlocation.replace("%data%", this.contacts["location"]));
+					formattedContacts.push(HTMLlocation.replace(data, this.contacts["location"]));
 					break;
 				default:
-					formattedContacts.push(HTMLcontactGeneric.replace("%data%", this.contacts[contact]));
+					formattedContacts.push(HTMLcontactGeneric.replace(data, this.contacts[contact]));
 			}
 		}
 
 		// display contacts in header and footer
 		formattedContacts.forEach(function(contact) {
-			$("#topContacts").append(contact);
-			$("#footerContacts").append(contact);
+			$("#topContacts, #footerContacts").append(contact);
 		});
 	}
 
 	// display pic and welcome msg
-	$("#header").append(HTMLbioPic.replace("%data%", this.biopic));
-	$("#header").append(HTMLwelcomeMsg.replace("%data%", this.welcomeMessage));
+	$header.append(HTMLbioPic.replace(data, this.biopic)+HTMLwelcomeMsg.replace(data, this.welcomeMessage));
 
 	// display skills if bio contains any
 	if (this.skills.length > 0) {
 		// display skills heading
-		$("#header").append(HTMLskillsStart);
+		$header.append(HTMLskillsStart);
 		// display formatted list of skills
 		this.skills.forEach(function(skill) {
-			$("#skills").append(HTMLskills.replace("%data%", skill));
+			$("#skills").append(HTMLskills.replace(data, skill));
 		});
 	}
 };
@@ -139,17 +138,19 @@ var education = {
 
 // method for formatting and displaying data contained in education object
 education.display = function() {
+	var $education = $("#education");
 	// display schools if education object contains any
 	if (this.schools.length > 0) {
 		this.schools.forEach(function(school) {
-			$("#education").append(HTMLschoolStart);
-			$(".education-entry:last").append(HTMLschoolName.replace("%data%", school.name)+HTMLschoolDegree.replace("%data%", school.degree));
-			$(".education-entry:last").append(HTMLschoolDates.replace("%data%", school.dates));
-			$(".education-entry:last").append(HTMLschoolLocation.replace("%data%", school.location));
+			$education.append(HTMLschoolStart);
+			$(".education-entry:last").append(HTMLschoolName.replace(data, school.name)+
+				HTMLschoolDegree.replace(data, school.degree)+
+				HTMLschoolDates.replace(data, school.dates)+
+				HTMLschoolLocation.replace(data, school.location));
 			// display major(s) for school only if applicable
 			if (school.majors.length > 0) {
 				var majors = school.majors.join(" / ");
-				$(".education-entry:last").append(HTMLschoolMajor.replace("%data%", majors));
+				$(".education-entry:last").append(HTMLschoolMajor.replace(data, majors));
 			} else {
 				// maintain layout if no majors to display
 				$(".education-entry:last").append("<br>");
@@ -160,13 +161,14 @@ education.display = function() {
 	// display online courses if education object contains any
 	if (this.onlineCourses.length > 0) {
 		// display online courses heading
-		$("#education").append(HTMLonlineClasses);
+		$education.append(HTMLonlineClasses);
 		// display formatted online courses list
 		this.onlineCourses.forEach(function(course) {
-			$("#education").append(HTMLschoolStart);
-			$(".education-entry:last").append(HTMLonlineTitle.replace("%data%", course.title)+HTMLonlineSchool.replace("%data%", course.school));
-			$(".education-entry:last").append(HTMLonlineDates.replace("%data%", course.date));
-			$(".education-entry:last").append(HTMLonlineURL.replace("%data%", course.url));
+			$education.append(HTMLschoolStart);
+			$(".education-entry:last").append(HTMLonlineTitle.replace(data, course.title)+
+				HTMLonlineSchool.replace(data, course.school)+
+				HTMLonlineDates.replace(data, course.date)+
+				HTMLonlineURL.replace(data, course.url));
 		});
 	}
 };
@@ -198,10 +200,11 @@ work.display = function() {
 		// display formatted list of jobs
 		this.jobs.forEach(function(job) {
 			$("#workExperience").append(HTMLworkStart);
-			$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", job.employer)+HTMLworkTitle.replace("%data%", job.title));
-			$(".work-entry:last").append(HTMLworkDates.replace("%data%", job.dates));
-			$(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.location));
-			$(".work-entry:last").append(HTMLworkDescription.replace("%data%", job.description));
+			$(".work-entry:last").append(HTMLworkEmployer.replace(data, job.employer)+
+				HTMLworkTitle.replace(data, job.title)+
+				HTMLworkDates.replace(data, job.dates)+
+				HTMLworkLocation.replace(data, job.location)+
+				HTMLworkDescription.replace(data, job.description));
 		});
 	}
 };
@@ -231,13 +234,13 @@ projects.display = function() {
 		// display formatted list of projects
 		this.projects.forEach(function(project) {
 			$("#projects").append(HTMLprojectStart);
-			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", project.title));
-			$(".project-entry:last").append(HTMLprojectDates.replace("%data%", project.dates));
-			$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", project.description));
+			$(".project-entry:last").append(HTMLprojectTitle.replace(data, project.title)+
+				HTMLprojectDates.replace(data, project.dates)+
+				HTMLprojectDescription.replace(data, project.description));
 
 			// display project images
 			project.images.forEach(function(image) {
-				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", image));
+				$(".project-entry:last").append(HTMLprojectImage.replace(data, image));
 			});
 		});
 	}
