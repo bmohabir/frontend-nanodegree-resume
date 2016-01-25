@@ -1,3 +1,7 @@
+* {
+  font: normal normal normal 18px/normal "Raleway", sans-serif;
+}
+
 body,
 div,
 ul,
@@ -11,7 +15,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  /*font-family: "Roboto", sans-serif;*/
 }
 
 .clear-fix {
@@ -21,7 +25,7 @@ h6 {
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding: 0 5% 20px;
 }
 
 h1 {
@@ -32,7 +36,6 @@ h1 {
 }
 
 h2 {
-  font-weight: bold;
   font-size: 24px;
   color: #999;
   line-height: 29px;
@@ -47,7 +50,6 @@ h3 {
 }
 
 h4 {
-  font-weight: bold;
   font-size: 14px;
   color: #4a4a4a;
   line-height: 17px;
@@ -83,6 +85,7 @@ p {
   font-size: 14px;
   color: #333;
   line-height: 21px;
+  font-weight: 300;
 }
 
 a {
@@ -90,6 +93,7 @@ a {
   text-decoration: none;
   margin-top: 10px;
   display: block;
+  font-weight: 300;
 }
 
 .welcome-message {
@@ -97,6 +101,8 @@ a {
   font-size: 18px;
   color: #f3f3f3;
   line-height: 28px;
+  display: inline-block;
+  padding-top: 30px;
 }
 
 #skills-h3 {
@@ -152,8 +158,11 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
+  margin: 10px;
   width: 200px;
   display: none;
+  border: 3px solid white;
+  border-radius: 50%;
 }
 
 img {
@@ -161,6 +170,7 @@ img {
 }
 
 span {
+  color: white;
   padding: 5px;
 }
 
